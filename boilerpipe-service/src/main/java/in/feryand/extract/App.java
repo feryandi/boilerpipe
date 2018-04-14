@@ -3,6 +3,7 @@ package in.feryand.extract;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,13 +21,14 @@ public class App extends NanoHTTPD {
 
   private App() throws IOException {
       super(PORT);
-      start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
       logger.info(String.format("Server running on port %d", PORT));
   }
 
   public static void main(String[] args) {
       try {
-          new App();
+          App app = new App();
+          app.setAsyncRunner(new BoundRunner(Executors.newFixedThreadPool(10)));
+          app.start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
       } catch (IOException ioe) {
           logger.log(Level.SEVERE, "Couldn't start server", ioe);
       }
