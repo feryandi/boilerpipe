@@ -203,6 +203,6 @@
 
   <modules>
     <module>boilerpipe-common</module>
-    <module>boilerpipe-demo</module>
+    <module>boilerpipe-service</module>
   </modules>
 </project>
