@@ -1,14 +1,12 @@
-package in.feryand.extract;
+package in.feryand.extract.servlet;
 
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
 import com.kohlschutter.boilerpipe.BoilerpipeProcessingException;
 import com.kohlschutter.boilerpipe.extractors.ArticleExtractor;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +15,6 @@ import java.io.PrintWriter;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("serial")
-@WebServlet(name = "boilerpipe", value = "/" )
 public class AppServlet extends HttpServlet {
 
   @Override
