@@ -14,6 +14,8 @@ import com.kohlschutter.boilerpipe.BoilerpipeProcessingException;
 import com.kohlschutter.boilerpipe.extractors.ArticleExtractor;
 import fi.iki.elonen.NanoHTTPD;
 
+import javax.servlet.http.HttpServlet;
+
 public class App extends NanoHTTPD {
   private final static Integer PORT = 8080;
 
