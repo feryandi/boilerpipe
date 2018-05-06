@@ -6,4 +6,7 @@
         <max-instances>1</max-instances>
         <idle-timeout>10m</idle-timeout>
     </basic-scaling>
+    <resource-files>
+        <include path="/**.json" />
+    </resource-files>
 </appengine-web-app>
